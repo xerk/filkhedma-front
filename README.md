@@ -1,7 +1,28 @@
-# Vue 3 + Vite
+# FilKhemda Front Test
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+node -v: 14.16.1 \
+npm -v: 6.13.1 
 
-## Recommended IDE Setup
+## Docker Installtion 
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+Clone the project make sure you have 
+
+Run docker build command
+
+```docker build -t filKhemda-test .```
+
+Let’s run our Vue.js app in a Docker container:
+
+`docker run -it -p 8080:80 --rm --name filKhemda-test-app-1 filKhemda-test`
+
+
+## Local Installtion 
+
+`npm install`
+
+`npm run dev`
+
+`npm run build`
+
+UNIT TEST \
+`npm run test`

@@ -1,9 +1,5 @@
 <script>
 	import timeAgo from "@/utils/timeAgo";
-	import JobDetails from "./JobDetails.vue";
-	// const props = defineProps({
-	// 	job: Object,
-	// });
 	export default {
 		props: {
 			job: {
@@ -53,14 +49,16 @@
 			</div>
 			<div class="mt-2">
                 <div class="text-gray-400 my-2 font-semibold">Company: {{job.company_name}}</div>
-				<router-link :to="{name: 'job-details', params: { slug: job.slug } }" class="text-2xl font-bold text-gray-700 hover:underline">{{job.title}}</router-link>
+				<a :href="job.url" target="_blank" class="text-2xl font-bold text-gray-700 hover:underline">{{job.title}}</a>
 				<p class="mt-2 text-gray-600" v-text="job.description.slice(0, 300).replace(/<\/?[^>]+>/ig, ' ')"></p>
 			</div>
 			<div class="flex items-center justify-between mt-4">
-				<router-link
+				<a
+					:href="job.url"
+					target="_blank"
 					:to="{ name: 'job-details', params: { slug: job.slug }}"
 					class="text-blue-500 hover:underline"
-				>Read more</router-link>
+				>Read more</a>
 				<div>
 					<span
 						v-for="(tag, key) in job.tags"
